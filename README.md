@@ -45,21 +45,40 @@ To combine and clean the data I used Oracle’s MySQL. After downloading my data
 Then i start to upload my datasets in MySQL.
 ```
 -- Loading CSV files into MySQL
-LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/202301_divvy_tripdata.csv'
+LOAD DATA INFILE 'sec-file-location/202301_divvy_tripdata.csv'
 INTO TABLE 202301_divvy_tripdata
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n';
 
-LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/202302_divvy_tripdata.csv'
+LOAD DATA INFILE 'sec-file-location/202302_divvy_tripdata.csv'
 INTO TABLE 202302_divvy_tripdata
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n';
 
-LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/202303_divvy_tripdata.csv'
+LOAD DATA INFILE 'sec-file-location/202303_divvy_tripdata.csv'
 INTO TABLE 202303_divvy_tripdata
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n';
 ```
+Afther creating my tables, I combine these tables using Uninon function and store them in a new table name **2023_tripdata_combined**.
+```
+-- Combine the three tables using UNION and store in a new table
+DROP TABLE IF EXISTS 2023_tripdata_combined;
+CREATE TABLE 2023_tripdata_combined AS
+SELECT * FROM 202301_divvy_tripdata
+UNION
+SELECT * FROM 202302_divvy_tripdata
+UNION
+SELECT * FROM 202303_divvy_tripdata;
+```
+Next step is exploring and cleaning my data. But before cleaning and make any changes Idescided to create a back up from my combined table.
+```
+-- Create a copy of the combined table before cleaning data
+CREATE TABLE 2023_tripdata_combined_copy AS
+SELECT * FROM 2023_tripdata_combined;
+```
+
+###
