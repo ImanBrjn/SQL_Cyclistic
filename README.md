@@ -39,6 +39,27 @@ My data contain 3 distinct .csv files, each of which corresponds to a month of 2
 | ride_id |	rideable_type	| started_at | ended_at	| start_station_name	| start_station_id	| end_station_name	| end_station_id	| start_lat	| start_lng	| end_lat	| end_lng	| member_casual |
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 
-Process
-To combine and clean the data I used Oracle’s MySQL, for data visualization I used Power BI, and for sharing my findings and insights I used PowerPoint.
-After downloading my data in put them in my sec-file-location using code to find this location to use it
+## 3- Process
+To combine and clean the data I used Oracle’s MySQL. After downloading my data in put them in my **sec-file-location**. By using `SHOW VARIABLES LIKE 'secure_file_priv';
+` code I found this location.
+Then i start to upload my datasets in MySQL.
+```
+-- Loading CSV files into MySQL
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/202301_divvy_tripdata.csv'
+INTO TABLE 202301_divvy_tripdata
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n';
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/202302_divvy_tripdata.csv'
+INTO TABLE 202302_divvy_tripdata
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n';
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/202303_divvy_tripdata.csv'
+INTO TABLE 202303_divvy_tripdata
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n';
+```
