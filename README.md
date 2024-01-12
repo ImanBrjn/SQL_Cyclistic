@@ -17,7 +17,7 @@ In order to answer the key business questions, I will follow the steps of the da
 5.	Supporting visualizations and key findings 
 6.	Recommendations based on my analysis
 Moreno, who is responsible for the development of campaigns and initiatives to promote the bike-share program, has assigned me a question to answer: How do annual members and casual riders use Cyclistic bikes differently?
-So I started to do my analysis step by step.
+Let's start do analysis step by step.
 
 ## 1- Ask
 First, let’s identify the business task:
@@ -81,4 +81,21 @@ CREATE TABLE 2023_tripdata_combined_copy AS
 SELECT * FROM 2023_tripdata_combined;
 ```
 
-###
+## 4 - Cleaning data
+Before cleaning my data I descided to explore my data.
+```
+-- checking my columns
+DESCRIBE 2023_tripdata_combined;
+
+-- Check the total number of columns in the combined table
+SELECT COUNT(*) AS total_columns
+FROM information_schema.columns
+WHERE table_name = '2023_tripdata_combined';
+
+-- Check the total number of rows in the combined table
+SELECT COUNT(*) AS total_rows
+FROM 2023_tripdata_combined;
+```
+Results show there are 13 columns and 498537 rows.
+Now I start to clean my data.
+First ckechikng for duplicates. Because 
