@@ -163,7 +163,7 @@ WHERE
   COALESCE(end_lng, '') = '' OR
   COALESCE(member_casual, '') = '';
 ```
-Results show there are 141133 rows with blank spaces. All blanks are for start_station_name and start staion_id columns
+Results show there are 141133 rows with blank spaces. All blanks are for *start_station_name* and start *staion_id* columns
 Because there are lots of blank spaces and also station name and id are not too important for our analysis purpose, I descided to leave them blank.
 By looking at my dataset I realized that start_at and end_at columns contain both data and time in same cell. For finding how each user type is using bike, it's propraite to seperate them in to two columns.
 ```
@@ -186,4 +186,23 @@ SELECT
   end_lng,
   member_casual
 FROM 2023_tripdata_combined;
+```
+Now it's easier to calculate duration of trips in minutes using *start_time* and *end_time*.
+```
+--             ---------------------------              --
+-- Creating a columns to calculate the minutes of trips --
+--             ---------------------------              --
+-- Add a new column to calculate the duration in minutes
+ALTER TABLE 2023_tripdata_cleaned
+ADD COLUMN duration_min INT;
+
+-- Update the new column with the duration in minutes
+UPDATE 2023_tripdata_cleaned
+SET duration_min = TIMESTAMPDIFF(MINUTE, start_time, end_time);
+```
+And for the last cleaning process i decsided to change *casual_member* column name to *user_type* for clearity.
+```
+-- Rename the column from member_casual to user_type
+ALTER TABLE 2023_tripdata_cleaned
+CHANGE COLUMN member_casual user_type VARCHAR(255);
 ```
