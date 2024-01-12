@@ -165,6 +165,25 @@ WHERE
 ```
 Results show there are 141133 rows with blank spaces. All blanks are for start_station_name and start staion_id columns
 Because there are lots of blank spaces and also station name and id are not too important for our analysis purpose, I descided to leave them blank.
-
-
-
+By looking at my dataset I realized that start_at and end_at columns contain both data and time in same cell. For finding how each user type is using bike, it's propraite to seperate them in to two columns.
+```
+-- Create a new table with separate date and time columns
+CREATE TABLE 2023_tripdata_cleaned AS
+SELECT
+  ride_id,
+  rideable_type,
+  DATE(started_at) AS start_date,
+  TIME(started_at) AS start_time,
+  DATE(ended_at) AS end_date,
+  TIME(ended_at) AS end_time,
+  start_station_name,
+  start_station_id,
+  end_station_name,
+  end_station_id,
+  start_lat,
+  start_lng,
+  end_lat,
+  end_lng,
+  member_casual
+FROM 2023_tripdata_combined;
+```
