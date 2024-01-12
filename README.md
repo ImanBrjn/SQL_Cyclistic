@@ -98,4 +98,73 @@ FROM 2023_tripdata_combined;
 ```
 Results show there are 13 columns and 498537 rows.
 Now I start to clean my data.
-First ckechikng for duplicates. Because 
+First ckechikng for duplicates. Because of methoed used to combine three tables, should not be any duplicate rows. 
+```
+-- Check for duplicate rows in the combined table
+SELECT COUNT(*) - COUNT(DISTINCT ride_id) AS duplicate_rows
+FROM 2023_tripdata_combined;
+-- There is no duplicates beacause of method i used to combine three tables
+```
+Next, check for null values in my table.
+```
+-- Count the number of null values in the combined table
+SELECT
+  SUM(CASE WHEN ride_id IS NULL THEN 1 ELSE 0 END) AS null_ride_id,
+  SUM(CASE WHEN rideable_type IS NULL THEN 1 ELSE 0 END) AS null_rideable_type,
+  SUM(CASE WHEN started_at IS NULL THEN 1 ELSE 0 END) AS null_started_at,
+  SUM(CASE WHEN ended_at IS NULL THEN 1 ELSE 0 END) AS null_ended_at,
+  SUM(CASE WHEN start_station_name IS NULL THEN 1 ELSE 0 END) AS null_start_station_name,
+  SUM(CASE WHEN start_station_id IS NULL THEN 1 ELSE 0 END) AS null_start_station_id,
+  SUM(CASE WHEN end_station_name IS NULL THEN 1 ELSE 0 END) AS null_end_station_name,
+  SUM(CASE WHEN end_station_id IS NULL THEN 1 ELSE 0 END) AS null_end_station_id,
+  SUM(CASE WHEN start_lat IS NULL THEN 1 ELSE 0 END) AS null_start_lat,
+  SUM(CASE WHEN start_lng IS NULL THEN 1 ELSE 0 END) AS null_start_lng,
+  SUM(CASE WHEN end_lat IS NULL THEN 1 ELSE 0 END) AS null_end_lat,
+  SUM(CASE WHEN end_lng IS NULL THEN 1 ELSE 0 END) AS null_end_lng,
+  SUM(CASE WHEN member_casual IS NULL THEN 1 ELSE 0 END) AS null_member_casual
+FROM 2023_tripdata_combined;
+```
+Result shows there is no null values in my dataset! That is strange! Because by looking at csv files I see some blanks.
+So i descided to search for blank cells in my combined table.
+```
+-- Count rows with blank spaces in any column
+SELECT COUNT(*)
+FROM 2023_tripdata_combined
+WHERE
+  COALESCE(ride_id, '') = '' OR
+  COALESCE(rideable_type, '') = '' OR
+  COALESCE(started_at, '') = '' OR
+  COALESCE(ended_at, '') = '' OR
+  COALESCE(start_station_name, '') = '' OR
+  COALESCE(start_station_id, '') = '' OR
+  COALESCE(end_station_name, '') = '' OR
+  COALESCE(end_station_id, '') = '' OR
+  COALESCE(start_lat, '') = '' OR
+  COALESCE(start_lng, '') = '' OR
+  COALESCE(end_lat, '') = '' OR
+  COALESCE(end_lng, '') = '' OR
+  COALESCE(member_casual, '') = '';
+
+-- Rows with blank spaces in any column
+SELECT *
+FROM 2023_tripdata_combined
+WHERE
+  COALESCE(ride_id, '') = '' OR
+  COALESCE(rideable_type, '') = '' OR
+  COALESCE(started_at, '') = '' OR
+  COALESCE(ended_at, '') = '' OR
+  COALESCE(start_station_name, '') = '' OR
+  COALESCE(start_station_id, '') = '' OR
+  COALESCE(end_station_name, '') = '' OR
+  COALESCE(end_station_id, '') = '' OR
+  COALESCE(start_lat, '') = '' OR
+  COALESCE(start_lng, '') = '' OR
+  COALESCE(end_lat, '') = '' OR
+  COALESCE(end_lng, '') = '' OR
+  COALESCE(member_casual, '') = '';
+```
+Results show there are 141133 rows with blank spaces. All blanks are for start_station_name and start staion_id columns
+Because there are lots of blank spaces and also station name and id are not too important for our analysis purpose, I descided to leave them blank.
+
+
+
