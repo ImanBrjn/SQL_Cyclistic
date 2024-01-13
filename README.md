@@ -40,6 +40,7 @@ My data contain 3 distinct .csv files, each of which corresponds to a month of 2
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 
 ## 3- Process
+### 3-1- Laoding and combining data
 To combine and clean the data I used Oracle’s MySQL. After downloading my data in put them in my **sec-file-location**. By using `SHOW VARIABLES LIKE 'secure_file_priv';
 ` code I found this location.
 Then i start to upload my datasets in MySQL.
@@ -81,7 +82,7 @@ CREATE TABLE 2023_tripdata_combined_copy AS
 SELECT * FROM 2023_tripdata_combined;
 ```
 
-## 4 - Cleaning data
+### 3-2- Cleaning data
 Before cleaning my data I descided to explore my data.
 ```
 -- checking my columns
@@ -207,7 +208,7 @@ ALTER TABLE 2023_tripdata_cleaned
 CHANGE COLUMN member_casual user_type VARCHAR(255);
 ```
 
-## 5- Analysis
+## 4- Analysis
 After cleaning my data I connected Powert BI to MySQL server to uplaod my cleaned table and start making charts and graph and do analysis.
 ![card](image.jpg)
 Fist take a look at ***total trips*** and ***avarege of trips duration in minutes***.
@@ -224,3 +225,9 @@ For this columns cart i made add a calculated column with Power BI to calculate 
 ![stations](image.jpg)
 This maps shows that most papolar stations were in North East and South East.
 
+## 5- Share
+To share my insights I made [this](file) intractive powerpoint presentation.
+
+## 6- Act
+
+# Conclusion
