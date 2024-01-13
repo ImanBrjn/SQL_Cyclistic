@@ -206,3 +206,6 @@ And for the last cleaning process i decsided to change *casual_member* column na
 ALTER TABLE 2023_tripdata_cleaned
 CHANGE COLUMN member_casual user_type VARCHAR(255);
 ```
+
+## 5- Analysis
+After cleaning my data I connect Powert BI 
