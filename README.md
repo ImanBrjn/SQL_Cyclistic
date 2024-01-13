@@ -208,4 +208,19 @@ CHANGE COLUMN member_casual user_type VARCHAR(255);
 ```
 
 ## 5- Analysis
-After cleaning my data I connect Powert BI 
+After cleaning my data I connected Powert BI to MySQL server to uplaod my cleaned table and start making charts and graph and do analysis.
+![card](image.jpg)
+Fist take a look at ***total trips*** and ***avarege of trips duration in minutes***.
+Now let's make pie and donut charts summaring rides per hour.
+![donut](image.jpg)
+As the charts show **members** do did more trips than **casual** users. Also just a little amount of trips happed by **docked bikes**. But *average of minutes traveled* chart shows some intresting results. **casual** users put more minutes on ride a bike in average than **members** and also minutes traveled with **docked bikes** was significant longer than other rideable types. These need more investigsting. So let's take a look at *total tripes for each user type.
+![each month](image.jpg)
+Aha! Longer rides for **casual** members and **docked bikes** is due to thier limited numbers compared to **members** and other rideable types.
+The bar graph above shows **members** never used **docked bikes** and they used **classic bikes** more than **elecrtic bikes**. However, **casual** users utilized **classic bikes** and **electric bikes** fairly similar.
+Also, the chart shows both users were more active in March. It might be due to weather condition which March s a little bit warmer than other two.
+![each day](image.jpg)
+For this columns cart i made add a calculated column with Power BI to calculate each day name by using this code `DayName = FORMAT('cyclistic 2023_tripdata_combined'[end_at_date], "dddd")` . The results indicates that **casual** users traveled each day of the week fairly similar. Although, **members** ride more in weekdays. We can coclude that **members** use bike to get to their work more than just ride them as an excersize or for fun.
+![stations](image.jpg)
+![stations](image.jpg)
+This maps shows that most papolar stations were in North East and South East.
+
