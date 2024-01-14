@@ -213,7 +213,7 @@ The charts reveal that members have a higher number of trips compared to casual 
 Moving on to the total trips for each user type, it becomes evident that longer rides for casual members and docked bikes are due to their limited bike usage compared to members and other rideable types. The bar graph illustrates that members never used docked bikes, preferring classic bikes over electric bikes. In contrast, casual users utilized classic bikes and electric bikes fairly similarly. Furthermore, the chart indicates higher user activity in March, possibly influenced by warmer weather conditions compared to the other two months.   
 ![weekdays](https://github.com/ImanBrjn/Cyclictic_project/assets/140934258/e38b13cb-4ffe-4113-a861-a3dfaae5b70d)   
 For the columns chart, I added a calculated column with Power BI to determine each day's name, using the code `DayName = FORMAT('cyclistic 2023_tripdata_combined'[end_at_date], "dddd")`. The results suggest that casual users travel on each day of the week fairly similarly. However, members tend to ride more on weekdays, implying that members use bikes primarily for commuting to work rather than for exercise or leisure.
-
+![maps](https://github.com/ImanBrjn/Cyclictic_project/assets/140934258/ed0a767d-ffe9-4367-8b2c-8fbb28173d09)   
 The maps display that the most popular stations are located in the North East and South East.
 
 ### 5- Share
