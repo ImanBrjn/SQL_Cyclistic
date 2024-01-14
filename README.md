@@ -91,6 +91,9 @@ WHERE table_name = '2023_tripdata_combined';
 SELECT COUNT(*) AS total_rows
 FROM 2023_tripdata_combined;
 ```
+![describe](https://github.com/ImanBrjn/Cyclictic_project/assets/140934258/c6305319-a2bb-4f7e-9b8a-cd1098112650)
+
+
 Results show there are 13 columns and 498,537 rows. Now I start to clean my data. First, checking for duplicates.  
 Because of the method used to combine three tables, there should not be any duplicate rows.
 ```
