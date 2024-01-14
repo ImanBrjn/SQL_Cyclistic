@@ -15,7 +15,7 @@ To answer key business questions, I will follow the data analysis process: ask, 
 ## Analysis Steps
 
 ### 1- Ask
-First, let’s identify the business task:
+First, let’s identify the business task:  
 The business task is to figure out how casual riders and Cyclistic members use their rental bikes differently. From these insights, the team will design a new marketing strategy to convert casual riders into annual members.
 Second, let’s designate key stakeholders:
 In this case study our stakeholders are:
