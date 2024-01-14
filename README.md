@@ -17,10 +17,10 @@ To answer key business questions, I will follow the data analysis process: ask, 
 ### 1- Ask
 First, let’s identify the business task:  
 The business task is to figure out how casual riders and Cyclistic members use their rental bikes differently. From these insights, the team will design a new marketing strategy to convert casual riders into annual members.
-Second, let’s designate key stakeholders:
-In this case study our stakeholders are:
-**Lily Moreno**: The director of marketing and my manager. Moreno is responsible for the development of campaigns and initiatives to promote the bike-share program. These may include email, social media, and other channels. 
-**Cyclistic marketing analytics team**: A team of data analysts who are responsible for collecting, analyzing, and reporting data that helps guide Cyclistic marketing strategy. 
+Second, let’s designate key stakeholders:  
+In this case study our stakeholders are:  
+**Lily Moreno**: The director of marketing and my manager. Moreno is responsible for the development of campaigns and initiatives to promote the bike-share program. These may include email, social media, and other channels.   
+**Cyclistic marketing analytics team**: A team of data analysts who are responsible for collecting, analyzing, and reporting data that helps guide Cyclistic marketing strategy.   
 **Cyclistic executive team**: The notoriously detail-oriented executive team will decide whether to approve there commended marketing program.
 
 ### 2- Prepare
@@ -36,7 +36,7 @@ My data contain 3 distinct .csv files, each of which corresponds to a month of 2
 
 ### 3- Process
 #### 3-1- Laoding and combining data
-To combine and clean the data, I used Oracle’s MySQL. After downloading my data, I placed them in my sec-file-location. By using the **SHOW VARIABLES LIKE**`secure_file_priv;` code, I found this location.
+To combine and clean the data, I used Oracle’s MySQL. After downloading my data, I placed them in my sec-file-location. By using the **SHOW VARIABLES LIKE**`secure_file_priv;` code, I found this location.  
 Then I started uploading my datasets into MySQL.
 ```
 -- Loading CSV files into MySQL
@@ -91,7 +91,7 @@ WHERE table_name = '2023_tripdata_combined';
 SELECT COUNT(*) AS total_rows
 FROM 2023_tripdata_combined;
 ```
-Results show there are 13 columns and 498,537 rows. Now I start to clean my data. First, checking for duplicates.
+Results show there are 13 columns and 498,537 rows. Now I start to clean my data. First, checking for duplicates.  
 Because of the method used to combine three tables, there should not be any duplicate rows.
 ```
 -- Check for duplicate rows in the combined table
@@ -156,7 +156,7 @@ WHERE
   COALESCE(end_lng, '') = '' OR
   COALESCE(member_casual, '') = '';
 ```
-Results show there are 141,133 rows with blank spaces. All blanks are for *start_station_name* and *start_station_id* columns. Because there are lots of blank spaces, and also station name and ID are not too important for our analysis purpose, I decided to leave them blank. 
+Results show there are 141,133 rows with blank spaces. All blanks are for *start_station_name* and *start_station_id* columns. Because there are lots of blank spaces, and also station name and ID are not too important for our analysis purpose, I decided to leave them blank.   
 By looking at my dataset, I realized that *start_at* and *end_at* columns contain both data and time in the same cell. For finding how each user type is using the bike, it's appropriate to separate them into two columns.
 ```
 -- Create a new table with separate date and time columns
@@ -223,5 +223,5 @@ After processing, analyzing, and sharing the insights, it's time to provide reco
 2. The company could introduce a new monthly plan with discounts for riders. The analysis results indicated that the number of rides is influenced by weather conditions. Marketing campaigns during warmer months could lead to a higher conversion rate.
 
 ## Conclusion
-In this project, I collaborated with Cyclistic, a bike-share company in Chicago. I utilized MySQL for data preparation and cleaning, conducted analysis, and employed Power BI for data visualization. My focus was on understanding how casual riders and Cyclistic members utilize rental bikes differently. In conclusion, I presented recommendations to the team for designing a new marketing strategy aimed at converting casual riders into annual members. 
+In this project, I collaborated with Cyclistic, a bike-share company in Chicago. I utilized MySQL for data preparation and cleaning, conducted analysis, and employed Power BI for data visualization. My focus was on understanding how casual riders and Cyclistic members utilize rental bikes differently. In conclusion, I presented recommendations to the team for designing a new marketing strategy aimed at converting casual riders into annual members.   
 Thank you for taking the time to read my Capstone Project!
