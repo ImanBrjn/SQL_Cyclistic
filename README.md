@@ -203,17 +203,15 @@ CHANGE COLUMN member_casual user_type VARCHAR(255);
 ```
 
 ### 4- Analysis
-After cleaning my data, I connected Power BI to the MySQL server to upload my cleaned table and started creating charts, graphs, and conducting analysis.   
-![Card](https://github.com/ImanBrjn/Cyclictic_project/assets/140934258/165f77f4-d044-4a51-8910-de65116b137c)
-Let's first examine the total number of trips and the average duration of trips in minutes. Additionally, we'll create pie and donut charts summarizing rides per hour.   
-![count rides](https://github.com/ImanBrjn/Cyclictic_project/assets/140934258/698f0ad8-804d-48ba-b3b9-9e159b2511f0)
-![average time](https://github.com/ImanBrjn/Cyclictic_project/assets/140934258/e4624d1a-3788-4a24-a497-9284d77dc59a)
-The charts reveal that members have a higher number of trips compared to casual users. Moreover, there is a minimal number of trips made on docked bikes. However, the chart displaying the average minutes traveled shows interesting results. Casual users spend more minutes per bike ride on average than members, and the duration of trips with docked bikes is significantly longer than other rideable types. This warrants further investigation.
-
-Moving on to the total trips for each user type, it becomes evident that longer rides for casual members and docked bikes are due to their limited bike usage compared to members and other rideable types. The bar graph illustrates that members never used docked bikes, preferring classic bikes over electric bikes. In contrast, casual users utilized classic bikes and electric bikes fairly similarly.
-
-Furthermore, the chart indicates higher user activity in March, possibly influenced by warmer weather conditions compared to the other two months.
-
+After cleaning my data, I connected Power BI to the MySQL server to upload my cleaned table and started creating charts, graphs, and conducting analysis.     
+![Card](https://github.com/ImanBrjn/Cyclictic_project/assets/140934258/165f77f4-d044-4a51-8910-de65116b137c)   
+Let's first examine the total number of trips and the average duration of trips in minutes. Additionally, we'll create pie and donut charts summarizing rides per hour.      
+![count rides](https://github.com/ImanBrjn/Cyclictic_project/assets/140934258/698f0ad8-804d-48ba-b3b9-9e159b2511f0)   
+![average time](https://github.com/ImanBrjn/Cyclictic_project/assets/140934258/e4624d1a-3788-4a24-a497-9284d77dc59a)   
+The charts reveal that members have a higher number of trips compared to casual users. Moreover, there is a minimal number of trips made on docked bikes. However, the chart displaying the average minutes traveled shows interesting results. Casual users spend more minutes per bike ride on average than members, and the duration of trips with docked bikes is significantly longer than other rideable types. This warrants further investigation.   
+![mounth](https://github.com/ImanBrjn/Cyclictic_project/assets/140934258/02eb634a-c25e-4e2f-bb5c-bd2844ab7949)   
+Moving on to the total trips for each user type, it becomes evident that longer rides for casual members and docked bikes are due to their limited bike usage compared to members and other rideable types. The bar graph illustrates that members never used docked bikes, preferring classic bikes over electric bikes. In contrast, casual users utilized classic bikes and electric bikes fairly similarly. Furthermore, the chart indicates higher user activity in March, possibly influenced by warmer weather conditions compared to the other two months.   
+![weekdays](https://github.com/ImanBrjn/Cyclictic_project/assets/140934258/5be90ef5-b28d-4ef7-b3c7-f80544331754)   
 For the columns chart, I added a calculated column with Power BI to determine each day's name, using the code `DayName = FORMAT('cyclistic 2023_tripdata_combined'[end_at_date], "dddd")`. The results suggest that casual users travel on each day of the week fairly similarly. However, members tend to ride more on weekdays, implying that members use bikes primarily for commuting to work rather than for exercise or leisure.
 
 The maps display that the most popular stations are located in the North East and South East.
