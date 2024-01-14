@@ -1,4 +1,4 @@
-# Cylictic
+# Cyclistic
 Google data analytics capstone project
 
 ## Introduction
@@ -17,9 +17,11 @@ In order to answer the key business questions, I will follow the steps of the da
 5.	Supporting visualizations and key findings 
 6.	Recommendations based on my analysis
 Moreno, who is responsible for the development of campaigns and initiatives to promote the bike-share program, has assigned me a question to answer: How do annual members and casual riders use Cyclistic bikes differently?
+
+## Analyzing
 Let's start do analysis step by step.
 
-## 1- Ask
+### 1- Ask
 First, let’s identify the business task:
 The business task is to figure out how casual riders and Cyclistic members use their rental bikes differently. From these insights, the team will design a new marketing strategy to convert casual riders into annual members.
 Second, let’s designate key stakeholders:
@@ -28,19 +30,19 @@ In this case study our stakeholders are:
 **Cyclistic marketing analytics team**: A team of data analysts who are responsible for collecting, analyzing, and reporting data that helps guide Cyclistic marketing strategy.  
 **Cyclistic executive team**: The notoriously detail-oriented executive team will decide whether to approve there commended marketing program.
 
-## 2- Prepare
+### 2- Prepare
 To answer the question, I will use Cyclistic’s historical trip data to analyze and identify trends and choose to work with first quarter of 2023 company’s data. 
 ### 2-1- Data Location and Credibility
 I downloaded the data from [here](https://divvy-tripdata.s3.amazonaws.com/index.html). The data has been made available by ***Motivate International Inc***. under [this license](https://divvybikes.com/data-license-agreement). This is public data that can be used to explore how different customer types are using Cyclistic bikes. Note that data-privacy issues prohibit users from using riders’ personally identifiable information. 
 The company has their license for this data and removed any personal information for sake of privacy. Therefore, data is unbiased and ROCCC (means it is reliable, original, comprehensive, current and cited.)
 
-### 2-2- Data Organization
+#### 2-2- Data Organization
 My data contain 3 distinct .csv files, each of which corresponds to a month of 2023. Each CSV file contains hundreds of thousands of data within 13 columns: 
 | ride_id |	rideable_type	| started_at | ended_at	| start_station_name	| start_station_id	| end_station_name	| end_station_id	| start_lat	| start_lng	| end_lat	| end_lng	| member_casual |
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 
-## 3- Process
-### 3-1- Laoding and combining data
+### 3- Process
+#### 3-1- Laoding and combining data
 To combine and clean the data I used Oracle’s MySQL. After downloading my data in put them in my **sec-file-location**. By using `SHOW VARIABLES LIKE 'secure_file_priv';
 ` code I found this location.
 Then i start to upload my datasets in MySQL.
@@ -82,7 +84,7 @@ CREATE TABLE 2023_tripdata_combined_copy AS
 SELECT * FROM 2023_tripdata_combined;
 ```
 
-### 3-2- Cleaning data
+#### 3-2- Cleaning data
 Before cleaning my data I descided to explore my data.
 ```
 -- checking my columns
@@ -208,7 +210,7 @@ ALTER TABLE 2023_tripdata_cleaned
 CHANGE COLUMN member_casual user_type VARCHAR(255);
 ```
 
-## 4- Analysis
+### 4- Analysis
 After cleaning my data I connected Powert BI to MySQL server to uplaod my cleaned table and start making charts and graph and do analysis.
 ![card](image.jpg)
 Fist take a look at ***total trips*** and ***avarege of trips duration in minutes***.
@@ -225,9 +227,14 @@ For this columns cart i made add a calculated column with Power BI to calculate 
 ![stations](image.jpg)
 This maps shows that most papolar stations were in North East and South East.
 
-## 5- Share
+### 5- Share
 To share my insights I made [this](file) intractive powerpoint presentation.
 
-## 6- Act
+### 6- Act
+After the data has been processed, analyzed and insights have been shared, it's time to recommendintions for cyclistinc. My recommendations are:
+1. Cyclistinc and make ads and campaigns near popular stations that could attract more casual riders and encourage them to become members. This ads can illustrate users could ride bike to get to their work and get rid of raffic hams and have healthy body.
+2. Cyclistic can introduce a new monthly plan and  discounts for riders. The results of analysis indicated the number of rides affected the weather condition. Marketing campaignsin the warmer months could lead to a higher conversion rate.
 
-# Conclusion
+## Conclusion
+In this project, I assumed to work with cyclistic, a bike share company in Chiacgo. I used MySQL to prepare and clean my data analyze and used Power BI to visualize data, as well as draw meaningful insights from it to answer business task: how casual riders and Cyclistic members use their rental bikes differently. At the end, I gave my reommendations to the team to design a new marketing strategy to convert casual riders into annual members.
+Thanks for your time to read my Capstone Project!
