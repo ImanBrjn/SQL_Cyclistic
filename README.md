@@ -217,7 +217,7 @@ For the columns chart, I added a calculated column with Power BI to determine ea
 The maps display that the most popular stations are located in the North East and South East.
 
 ### 5- Share
-To share my insights, I created an interactive PowerPoint presentation.
+To share my insights, I created an interactive [PowerPoint presentation](https://github.com/ImanBrjn/Cyclistic_project/blob/main/cyclistic.ppsx).
 
 ### 6- Act
 After processing, analyzing, and sharing the insights, it's time to provide recommendations for Cyclistic. My recommendations are:
