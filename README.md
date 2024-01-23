@@ -226,4 +226,5 @@ After processing, analyzing, and sharing the insights, it's time to provide reco
 
 ## Conclusion
 In this project, I collaborated with Cyclistic, a bike-share company in Chicago. I utilized MySQL for data preparation and cleaning, conducted analysis, and employed Power BI for data visualization. My focus was on understanding how casual riders and Cyclistic members utilize rental bikes differently. In conclusion, I presented recommendations to the team for designing a new marketing strategy aimed at converting casual riders into annual members.   
-Thank you for taking the time to read my Capstone Project!
+   
+**Thank you for taking the time to read my Capstone Project!**
