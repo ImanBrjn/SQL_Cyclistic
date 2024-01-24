@@ -2,7 +2,7 @@
 Google data analytics capstone project
 
 ## Introduction
-This is my case study project for the [Google Data Analytics Professional Certificate published by coursera](https://www.coursera.org/learn/google-data-analytics-capstone). In this case study, I am performing a real-world task as a junior data analyst for the fictional company Cyclistic. For this project, I will work with a large dataset using Excel and MySQL to demonstrate my proficiency in data analysis. Additionally, I will utilize Power BI and PowerPoint to visualize and share the results of my analysis.
+This is my case study project for the [Google Data Analytics Professional Certificate published by coursera](https://www.coursera.org/professional-certificates/google-data-analytics). In this case study, I am performing a real-world task as a junior data analyst for the fictional company Cyclistic. For this project, I will work with a large dataset using Excel and MySQL to demonstrate my proficiency in data analysis. Additionally, I will utilize Power BI and PowerPoint to visualize and share the results of my analysis.
 
 ## Scenario
 I am a junior data analyst in the marketing team at Cyclistic, a bike-share company in Chicago. The director of marketing believes that the company's future success depends on maximizing annual memberships. The goal is to understand the differences in how casual riders and annual members use Cyclistic bikes. From these insights, the team aims to design a new marketing strategy to convert casual riders into annual members.
