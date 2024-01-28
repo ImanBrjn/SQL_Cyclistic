@@ -36,7 +36,7 @@ My data contain 3 distinct .csv files, each of which corresponds to a month of 2
 
 ### 3- Process
 #### 3-1- Laoding and combining data
-To combine and clean the data, I used Oracle’s MySQL. After downloading my data, I placed them in my sec-file-location. By using the **SHOW VARIABLES LIKE**`secure_file_priv;` code, I found this location.  
+To combine and clean the data, I used Oracle’s MySQL. After downloading my data, I placed them in my sec-file-location. By using the `SHOW VARIABLES LIKE secure_file_priv;` code, I found this location.  
 Then I started uploading my datasets into MySQL.
 ```
 -- Loading CSV files into MySQL
